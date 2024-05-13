@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,8 +81,11 @@ DATABASES = {
         'NAME': 'varun_shopkart',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'F2s@btm2',
-        'PORT': '3307'
+        'PASSWORD': '',
+        'PORT': '3306',
+        'OPTIONS': {
+            'sql_mode': 'STRICT_ALL_TABLES',
+        },
     }
 }
 
@@ -123,6 +127,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL='/images/'
 MEDIA_ROOT=BASE_DIR/'static'
+
+STATICFILES_DIRS=[
+    BASE_DIR/'static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

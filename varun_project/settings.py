@@ -79,15 +79,17 @@ WSGI_APPLICATION = 'varun_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'shopkart',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'F2s@btm2',
-        'PORT': '3306',
-        'OPTIONS': {
-            'sql_mode': 'STRICT_ALL_TABLES',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR/'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'shopkart',
+        # 'HOST': 'localhost',
+        # 'USER': 'root',
+        # 'PASSWORD': 'F2s@btm2',
+        # 'PORT': '3306',
+        # 'OPTIONS': {
+        #     'sql_mode': 'STRICT_ALL_TABLES',
+        # },
     }
 }
 

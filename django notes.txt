@@ -1,0 +1,39 @@
+1.open visual studio code and open terminal in vs code.
+   T: python --version (check python version).
+2.then install pipenv.
+   T: pip install pipenv / python -m venv (virtualenvname)
+3.to activate environment.
+   T: pipenv shell / cd (virtualenvname)/Scripts/activate
+4. to check environment
+   T: pipenv --venv
+5.install django
+   T: pip install django
+6.to view django command.
+  T: django-admin
+7.to create project folder
+   T: django-admin startproject varun_project .  (here varun_project . is a  project folder name)
+8.to run python file 
+  T: python manage.py runserver (displays 127.0.0.1:8000)
+9. to change the port number of run file
+  T: python manage.py runserver 8001 (here 8001 is a port number)
+10. to install mysql 
+  T: pip install mysqlclient
+11.to install jazzmin
+ T: pip install -U django-jazzmin
+12.to install mysqlclient
+ T: pip install mysqlclient
+13.to migration
+ T : python manage.py makemigration
+ T: python manage.py migrate
+14. Manipulating and processing image
+ T : pip install pillow
+15. git version
+ T: git --version
+16.to view git configuration
+ T: git config -h
+17.to add username and email address	
+T: git config --global user.name "John Doe"
+  (next line after enter of above line) git config --global user.email johndoe@example.com
+18.to view of list config in git
+T:  git config --list
+19. 

@@ -3,7 +3,7 @@ from . models import *
 from django.contrib import messages
 # Create your views here.
 def home(request):
-    return render(request,"shop/index.html ")
+    return render(request,"shop/index.html")
 
 def register(request):
     return render(request,"shop/register.html")

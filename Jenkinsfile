@@ -3,23 +3,11 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        stage('Test Jenkins') {
             steps {
-                checkout scm
+                echo 'V_Mart Jenkins pipeline started successfully'
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'python --version'
-                sh 'pip --version'
-            }
-        }
-
-        stage('Docker Build') {
-            steps {
-                sh 'docker build -t v_mart-devops-app:v1 .'
-            }
-        }
     }
 }

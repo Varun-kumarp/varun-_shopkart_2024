@@ -17,7 +17,8 @@ pipeline {
             steps {
                 sh 'python3 --version'
                 sh 'pip --version'
-                sh 'python manage.py test'
+                sh 'pip install -r requirements.txt'
+                sh 'python3 manage.py test'
             }
         }
 

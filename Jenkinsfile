@@ -1,13 +1,30 @@
 pipeline {
     agent any
 
+    environment {
+        IMAGE_NAME = 'v_mart-devops-app'
+    }
+
     stages {
 
-        stage('Test Jenkins') {
+        stage('Checkout') {
             steps {
-                echo 'V_Mart Jenkins pipeline started successfully'
+                checkout scm
             }
         }
 
+        stage('Test') {
+            steps {
+                sh 'python --version'
+                sh 'pip --version'
+                sh 'python manage.py test'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh "docker build -t ${IMAGE_NAME}:v${BUILD_NUMBER} ."
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        DOCKERHUB_USERNAME = 'varun7560'
         IMAGE_NAME = 'v_mart-devops-app'
     }
 
@@ -25,7 +26,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh "docker build -t ${IMAGE_NAME}:v${BUILD_NUMBER} ."
+                sh "docker build -t ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:v${BUILD_NUMBER} ."
             }
         }
     }

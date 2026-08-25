@@ -29,5 +29,24 @@ pipeline {
                 sh "docker build -t ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:v${BUILD_NUMBER} ."
             }
         }
+
+        stage('Docker Push') {
+            steps {
+                sh "docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:v${BUILD_NUMBER}"
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                sh "kubectl set image deployment/django-deployment django=${DOCKERHUB_USERNAME}/${IMAGE_NAME}:v${BUILD_NUMBER}"
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                sh 'kubectl rollout status deployment/django-deployment'
+                sh 'kubectl get pods'
+            }
+        }
     }
 }

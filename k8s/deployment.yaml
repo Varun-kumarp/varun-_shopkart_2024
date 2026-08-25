@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: django
-          image: v_mart-devops-app:v1
-          imagePullPolicy: IfNotPresent
+          image: varun7560/v_mart-devops-app:v1
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
